@@ -291,6 +291,10 @@ export default class MultiSlider extends React.Component {
       this.props.onToggleOne();
       return;
     }
+    
+    if (!this.props.enabledOne) {
+      return;
+    }
 
     this.setState(
       {
@@ -310,6 +314,10 @@ export default class MultiSlider extends React.Component {
   endTwo = gestureState => {
     if (gestureState.moveX === 0 && this.props.onToggleTwo) {
       this.props.onToggleTwo();
+      return;
+    }
+    
+    if (!this.props.enabledTwo) {
       return;
     }
 
